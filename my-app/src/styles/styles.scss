@@ -1,0 +1,37 @@
+@import './const';
+*{
+  text-decoration: none;
+  font-family: 'Circular Std',sans-serif;
+}
+html, body{
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: #F5F5F5;
+}
+h4{
+  font-size: 18px;
+  color: $black-color;
+  margin: 0;
+  padding-top: 4px;
+}
+h5{
+  font-size: 16px;
+  color: $black-color;
+  margin: 0;
+  padding-top: 4px;
+}
+h6{
+  font-size: 14px;
+  color: $menu-color;
+  margin: 0 32px 0 0;
+  padding-top: 4px;
+}
+h6.active{
+  color: $ref-color;
+  padding-bottom: 1px;
+  border-bottom: 3px solid $ref-color;
+}
+p{
+  margin: 0;
+}

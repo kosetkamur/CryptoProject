@@ -1,0 +1,18 @@
+.market{
+  position: relative;
+  width: 375px;
+  height: 100%;
+  background: #F8F9FA;
+  margin: 0 auto;
+  padding: 17px 0;
+  &__search{
+    display: flex;
+    flex-direction: row;
+  }
+  &__multidropdown{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 18px 17px 24px 17px;
+  }
+}
