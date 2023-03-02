@@ -1,22 +1,23 @@
-.table{
+.table {
   margin: 0 17px;
-  &__head{
+
+  &__head {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 11px 0;
-    &_title{
+
+    &_title {
       font-family: 'Circular Std',sans-serif;
       font-style: normal;
-      font-weight: 450;
       font-size: 14px;
       line-height: 18px;
       color: #6C757D;
     }
-    &_value{
+
+    &_value {
       font-family: 'Circular Std',sans-serif;
       font-style: normal;
-      font-weight: 450;
       font-size: 14px;
       color: #212529;
     }

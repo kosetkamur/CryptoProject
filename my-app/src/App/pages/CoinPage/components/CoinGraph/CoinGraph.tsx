@@ -1,7 +1,8 @@
 import React from "react";
 
+import graph from "@img/graph.png";
+
 import styles from "./CoinGraph.module.scss";
-import graph from "../../../../../media/img/graph.png";
 
 const CoinGraph = () => {
   return (

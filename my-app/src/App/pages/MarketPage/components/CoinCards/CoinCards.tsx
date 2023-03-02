@@ -8,9 +8,9 @@ const CoinCards: FC = () => {
   const coinContext = useCoinContext();
   return (
     <div className={styles.cards}>
-      {coinContext.length > 0
-        ? coinContext.map((stock) => <CoinCard stock={stock} key={stock.id} />)
-        : ""}
+      {coinContext.map((stock) => (
+        <CoinCard stock={stock} key={stock.id} />
+      ))}
     </div>
   );
 };

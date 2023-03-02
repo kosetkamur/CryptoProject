@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 import { Stocks } from "@config/const";
+import { url } from "@config/urls";
 import axios from "axios";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -17,29 +18,18 @@ function App() {
   const [stocks, setStocks] = useState<Stocks[]>([]);
 
   useEffect(() => {
-    const fetch = async () => {
-      const result = await axios({
-        method: "get",
-        url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd",
-      });
-      setStocks(
-        result.data.map((stock: any) => ({
-          id: stock.id,
-          name: stock.name,
-          image: stock.image,
-          symbol: stock.symbol,
-          current_price: stock.current_price,
-          price_change_percentage_24h: stock.price_change_percentage_24h,
-          price_change_24h: stock.price_change_24h,
-          market_cap: stock.market_cap,
-          fully_diluted_valuation: stock.fully_diluted_valuation,
-          circulating_supply: stock.circulating_supply,
-          total_supply: stock.total_supply,
-          max_supply: stock.max_supply,
-        }))
-      );
-    };
-    fetch();
+    try {
+      const fetch = async () => {
+        const result = await axios({
+          method: "get",
+          url: url,
+        });
+        setStocks(result.data);
+      };
+      fetch();
+    } catch (e: any) {
+      alert(e.message);
+    }
   }, []);
 
   return (

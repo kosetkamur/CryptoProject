@@ -1,8 +1,18 @@
 import React, { useState } from "react";
 
-import { MultiDropdownProps } from "@config/const";
-
 import styles from "./MultiDropdown.module.scss";
+
+export type Option = {
+  key: string;
+  value: string;
+};
+
+type MultiDropdownProps = {
+  options: Option[];
+  value: Option[];
+  onChange: (value: Option[]) => void;
+  pluralizeOptions?: (value: Option[]) => string;
+};
 
 const MultiDropdown: React.FC<MultiDropdownProps> = ({
   value,
@@ -15,9 +25,8 @@ const MultiDropdown: React.FC<MultiDropdownProps> = ({
     <div className={styles.multiDropdown}>
       <button
         className={styles.multiDropdown__button}
-        disabled={props.disabled}
         onClick={() => {
-          setIsOpen(!isOpen);
+          setIsOpen((prevValue) => !prevValue);
         }}
       >
         {props.pluralizeOptions ? props.pluralizeOptions(value) : ""}
@@ -25,26 +34,23 @@ const MultiDropdown: React.FC<MultiDropdownProps> = ({
       </button>
       {isOpen && (
         <div className={styles.options} id="options">
-          {props.options.map(
-            (item) =>
-              !props.disabled && (
-                <label
-                  key={Math.random()}
-                  onClick={() =>
-                    value.some((val) => val.key === item.key)
-                      ? onChange(value)
-                      : onChange(value.concat([item]))
-                  }
-                >
-                  <input
-                    type="checkbox"
-                    name="checkbox"
-                    className={styles.options__item}
-                  />
-                  {item.value}
-                </label>
-              )
-          )}
+          {props.options.map((item) => (
+            <label
+              key={item.key}
+              onClick={() =>
+                value.some((val) => val.key === item.key)
+                  ? onChange(value)
+                  : onChange(value.concat([item]))
+              }
+            >
+              <input
+                type="checkbox"
+                name="checkbox"
+                className={styles.options__item}
+              />
+              {item.value}
+            </label>
+          ))}
         </div>
       )}
     </div>

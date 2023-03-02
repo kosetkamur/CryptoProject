@@ -1,16 +1,3 @@
-export type Option = {
-  key: string;
-  value: string;
-};
-
-export type MultiDropdownProps = {
-  options: Option[];
-  value: Option[];
-  onChange: (value: Option[]) => void;
-  disabled?: boolean;
-  pluralizeOptions?: (value: Option[]) => string;
-};
-
 export type Stocks = {
   id: string;
   name: string;
@@ -27,8 +14,8 @@ export type Stocks = {
   max_supply?: number;
 };
 
-export const re = /(?=\B(?:\d{3})+(?!\d))/g;
+export const regexPrice = /(?=\B(?:\d{3})+(?!\d))/g;
 
 export type CoinList = {
-  coin: Stocks;
+  coin: Stocks | null;
 };

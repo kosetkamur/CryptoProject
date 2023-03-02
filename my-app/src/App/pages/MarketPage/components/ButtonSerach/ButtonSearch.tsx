@@ -8,24 +8,10 @@ export type ButtonProps = React.PropsWithChildren<{
 }> &
   React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const ButtonSearch: React.FC<ButtonProps> = ({
-  onClick,
-  children,
-  loading = false,
-  className,
-  ...props
-}) => {
+export const ButtonSearch: React.FC<ButtonProps> = ({ onClick }) => {
   return (
-    <button
-      {...props}
-      onClick={loading !== true ? onClick : undefined}
-      className={styles.button}
-      disabled={loading === true || props.disabled ? true : undefined}
-    >
-      <div className="button__content">
-        {/*{loading && <Loader loading={ loading } size={LoaderSize.s}/>}*/}
-        {children}
-      </div>
+    <button onClick={onClick} className={styles.button}>
+      <div className="button__content" />
     </button>
   );
 };

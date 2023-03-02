@@ -1,6 +1,4 @@
-import React, { FC } from "react";
-
-import { Option } from "@config/const";
+import React, { FC, useState } from "react";
 
 import ButtonSearch from "./components/ButtonSerach";
 import CategoryCoin from "./components/CategoryCoin";
@@ -9,13 +7,21 @@ import InputSearch from "./components/InputSearch";
 import styles from "./MarketPage.module.scss";
 import Line from "../../components/Line";
 import MultiDropdown from "../../components/Multidropdown";
+import { Option } from "../../components/Multidropdown/MultiDropdown";
 
+const options: Option[] = [
+  { key: "USD", value: "USD" },
+  { key: "RUB", value: "RUB" },
+  { key: "EUR", value: "EUR" },
+  { key: "AED", value: "AED" },
+];
 const MarketPage: FC = () => {
-  const options: Option[] = [{ key: "USD", value: "USD" }];
-  let initialState = [{ key: "USD", value: "USD" }];
+  const [option, setOption] = useState<Option[]>([
+    { key: "USD", value: "USD" },
+  ]);
 
   const defaultPluralizeOptions = (elements: Option[]) =>
-    elements.map((el: Option) => el.key).join();
+    elements.map((el: Option) => el.value).join();
 
   return (
     <div className={styles.market}>
@@ -27,8 +33,8 @@ const MarketPage: FC = () => {
         <h4>Coins</h4>
         <MultiDropdown
           options={options}
-          value={initialState}
-          onChange={() => {}}
+          value={option}
+          onChange={setOption}
           pluralizeOptions={defaultPluralizeOptions}
         />
       </div>

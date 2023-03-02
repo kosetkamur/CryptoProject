@@ -1,14 +1,14 @@
-.button::after{
+.button::after {
   content: url("../../../../../media/img/search.svg");
   width: 20px;
   height: 20px;
 }
-.button{
+
+.button {
   background-color: #DFE2E4;
   border-radius: 6px;
   font-family: 'Circular Std',sans-serif;
   font-style: normal;
-  font-weight: 450;
   font-size: 14px;
   color: #343A40;
   line-height: 18px;
@@ -19,13 +19,16 @@
   padding: 10px;
   cursor:pointer;
   margin-left: 10px;
-  &:hover{
+
+  &:hover {
     opacity: 0.5;
   }
-  &:disabled{
+
+  &:disabled {
     opacity: 0.3;
   }
-  &__content{
+
+  &__content {
     display: flex;
     flex-direction: row;
     align-items: center;
