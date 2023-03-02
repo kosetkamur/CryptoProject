@@ -1,3 +1,5 @@
+@import "@styles/color.scss";
+
 .table {
   margin: 0 17px;
 
@@ -12,14 +14,14 @@
       font-style: normal;
       font-size: 14px;
       line-height: 18px;
-      color: #6C757D;
+      color: $menu-color;
     }
 
     &_value {
       font-family: 'Circular Std',sans-serif;
       font-style: normal;
       font-size: 14px;
-      color: #212529;
+      color: $coin-title;
     }
   }
 }

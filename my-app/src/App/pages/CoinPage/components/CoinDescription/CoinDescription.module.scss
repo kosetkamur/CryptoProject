@@ -1,8 +1,10 @@
+@import "@styles/color.scss";
+
 .description {
   margin: 21px 17px 21px 17px;
 
   h5 {
-    color: #6C757D;
+    color: $menu-color;
     padding-bottom: 5px;
   }
 

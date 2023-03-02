@@ -1,8 +1,10 @@
+@import "@styles/color.scss";
+
 .market {
   position: relative;
   width: 375px;
   height: 100%;
-  background: #F8F9FA;
+  background: $small-btn-color;
   margin: 0 auto;
   padding: 17px 0;
 

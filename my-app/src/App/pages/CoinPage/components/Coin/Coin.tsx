@@ -10,7 +10,7 @@ import CoinTable from "../CoinTable/CoinTable";
 
 const Coin: FC<CoinList> = ({ coin }) => {
   return (
-    <div>
+    <>
       <div className="coin">
         <CoinHeader coin={coin} />
         <CoinPrice coin={coin} />
@@ -18,7 +18,7 @@ const Coin: FC<CoinList> = ({ coin }) => {
         <CoinDescription coin={coin} />
         <CoinGraph />
       </div>
-    </div>
+    </>
   );
 };
 

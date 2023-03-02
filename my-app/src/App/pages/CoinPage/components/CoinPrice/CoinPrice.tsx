@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 
-import { CoinList, regexPrice } from "@config/const";
+import { CoinList } from "@config/const";
+import { regexPrice } from "@config/regex";
 
 import styles from "./CoinPrice.module.scss";
 
@@ -10,21 +11,29 @@ const CoinPrice: FC<CoinList> = ({ coin }) => {
       <div className={styles.price}>
         <div className={styles.price__current}>
           <h3>
-            ${coin.current_price.toFixed(2).toString().replace(regexPrice, ",")}
+            $
+            {coin?.market_data?.current_price.usd
+              ? coin?.market_data?.current_price.usd
+                  .toFixed(3)
+                  .toString()
+                  .replace(regexPrice, ",")
+              : 0}
           </h3>
         </div>
         <div className={styles.price__change}>
           <p>
-            {coin.price_change_24h !== undefined &&
-            coin.price_change_24h > 0 ? (
+            {coin?.market_data?.price_change_24h.usd !== undefined &&
+            coin.market_data?.price_change_24h.usd > 0 ? (
               <span className={styles.colorGreen}>
-                +{coin.price_change_24h.toFixed(3)}(
-                {coin.price_change_percentage_24h.toFixed(2)}%)
+                +{coin?.market_data?.price_change_24h.usd}(
+                {coin?.market_data?.price_change_percentage_24h_in_currency.usd}
+                %)
               </span>
             ) : (
               <span className={styles.colorRed}>
-                {coin.price_change_24h?.toFixed(3) || ""}(
-                {coin.price_change_percentage_24h.toFixed(2)}%)
+                {coin?.market_data?.price_change_24h?.usd || ""}(
+                {coin?.market_data?.price_change_percentage_24h_in_currency.usd}
+                %)
               </span>
             )}
           </p>

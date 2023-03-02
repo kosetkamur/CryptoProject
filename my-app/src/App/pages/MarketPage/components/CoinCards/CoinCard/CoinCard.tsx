@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 
-import { regexPrice, Stocks } from "@config/const";
+import { Stocks } from "@config/const";
+import { regexPrice } from "@config/regex";
 import cn from "classnames";
 import { Link } from "react-router-dom";
 

@@ -13,15 +13,15 @@ const CoinHeader: FC<CoinList> = ({ coin }) => {
       <Link to="/" className={styles.header__arrowBack}>
         <img src={arrowBack} alt="Вернуться на главную" />
       </Link>
-      {/*<div className={styles.header__image}>*/}
-      {/*  <img src={coin.image} alt="знак валюты" />*/}
-      {/*</div>*/}
-      {/*<div className={styles.header__description}>*/}
-      {/*  <p className={styles.header__description_title}>{coin.name}</p>*/}
-      {/*  <p className={styles.header__description_subtitle}>*/}
-      {/*    ({coin.symbol.toUpperCase()})*/}
-      {/*  </p>*/}
-      {/*</div>*/}
+      <div className={styles.header__image}>
+        <img src={coin?.image.small} alt="знак валюты" />
+      </div>
+      <div className={styles.header__description}>
+        <p className={styles.header__description_title}>{coin?.name}</p>
+        <p className={styles.header__description_subtitle}>
+          ({coin?.symbol.toUpperCase()})
+        </p>
+      </div>
       <div className={styles.header__star}>
         <img src={star} alt="Добавить в избранное" />
       </div>

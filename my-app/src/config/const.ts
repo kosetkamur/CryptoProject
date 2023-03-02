@@ -7,14 +7,18 @@ export type Stocks = {
   value?: string;
   price_change_percentage_24h: number;
   price_change_24h?: number;
-  market_cap?: number;
-  fully_diluted_valuation?: number;
-  circulating_supply?: number;
-  total_supply?: number;
-  max_supply?: number;
+  description?: { en: string };
+  market_data?: {
+    market_cap?: { usd: number };
+    fully_diluted_valuation?: { usd: number };
+    circulating_supply?: number;
+    total_supply?: number;
+    max_supply?: number;
+    current_price: { usd: number };
+    price_change_24h: { usd: number };
+    price_change_percentage_24h_in_currency: { usd: number };
+  };
 };
-
-export const regexPrice = /(?=\B(?:\d{3})+(?!\d))/g;
 
 export type CoinList = {
   coin: Stocks | null;

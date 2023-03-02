@@ -7,7 +7,7 @@
 .card {
   width: 343px;
   height: 72px;
-  background: #FFFFFF;
+  background-color: $white-color;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075);
   border-radius: 8px;
   display: flex;
@@ -39,14 +39,14 @@
       &_title {
         font-family: 'Circular Std', sans-serif;
         font-size: 16px;
-        color: #212529;
+        color: $coin-title;
         margin: 0;
       }
 
       &_subtitle {
         font-family: 'Circular Std', sans-serif;
         font-size: 12px;
-        color: #6C757D;
+        color: $menu-color;
         margin: 0;
       }
     }

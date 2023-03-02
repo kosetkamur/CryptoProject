@@ -27,8 +27,8 @@ function App() {
         setStocks(result.data);
       };
       fetch();
-    } catch (e: any) {
-      alert(e.message);
+    } catch {
+      alert("Error");
     }
   }, []);
 

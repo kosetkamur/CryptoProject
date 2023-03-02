@@ -1,5 +1,7 @@
+@import "@styles/color.scss";
+
 .line {
-  background-color: #DFE2E4;
+  background-color: $lines-color;
   height: 1px;
   width: 100%;
 }
