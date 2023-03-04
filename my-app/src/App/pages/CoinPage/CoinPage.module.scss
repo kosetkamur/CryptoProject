@@ -1,0 +1,10 @@
+@import "@styles/color.scss";
+
+.coin {
+  position: relative;
+  width: 375px;
+  height: 100%;
+  background: $white-color;
+  margin: 0 auto;
+  padding: 17px 0;
+}

@@ -1,0 +1,38 @@
+@import '@styles/color.scss';
+
+.price {
+  display: flex;
+  flex-direction: row;
+  padding: 16px 17px 13px 17px;
+
+  &__current {
+
+    h3 {
+      font-family: 'Circular Std', sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      color: $coin-title;
+      margin: 0;
+    }
+  }
+
+  &__change{
+
+    p {
+      font-family: 'Circular Std', sans-serif;
+      font-style: normal;
+      font-size: 16px;
+      padding-top: 6px;
+      padding-left: 12px;
+
+      .colorRed {
+        color: $red-color;
+      }
+
+      .colorGreen {
+        color: $green-color;
+      }
+    }
+  }
+}

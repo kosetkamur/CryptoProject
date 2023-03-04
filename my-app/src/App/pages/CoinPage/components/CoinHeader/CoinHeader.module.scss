@@ -1,0 +1,50 @@
+@import "@styles/color.scss";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 17px;
+
+  &__arrowBack {
+    width: 9px;
+    height: 14px;
+  }
+
+  &__image {
+    padding: 0 8px 0 10px;
+
+    img {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: row;
+
+    &_title {
+      font-family: 'Circular Std',sans-serif;
+      font-style: normal;
+      font-size: 16px;
+      color: $coin-title;
+    }
+
+    &_subtitle {
+      padding: 6px 0 0 4px;
+      font-family: 'Circular Std',sans-serif;
+      font-style: normal;
+      font-size: 10px;
+      color: $menu-color;
+    }
+  }
+
+  &__star {
+    padding-left: 12px;
+    width: 16px;
+    height: 14px;
+  }
+}
