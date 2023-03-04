@@ -6,21 +6,21 @@ const CategoryCoin = () => {
   // находиться в разработке, поэтому нет useState
   // const [active, setActive] = useState();
   const categories = [
-    { id: 1, content: "All", isActive: true },
-    { id: 2, content: "Gainer", isActive: false },
-    { id: 3, content: "Loser", isActive: false },
-    { id: 4, content: "Favourites", isActive: false },
+    { id: 1, content: "All" },
+    { id: 2, content: "Gainer" },
+    { id: 3, content: "Loser" },
+    { id: 4, content: "Favourites" },
   ];
-  const handleClickMenu = (e: React.MouseEvent) => {
-    categories.map((category) => (category.isActive = false));
-  };
+
+  const [activeId, setActiveId] = React.useState(1);
+
   return (
     <div className={styles.category}>
       {categories.map((category) => (
         <h6
           key={category.id}
-          onClick={handleClickMenu}
-          className={category.isActive ? "active" : ""}
+          onClick={() => setActiveId(category.id)}
+          className={category.id === activeId ? "active" : ""}
         >
           {category.content}
         </h6>

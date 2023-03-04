@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Stocks } from "@config/const";
+import { CoinTypes } from "@config/const";
 import { urlCoin } from "@config/urls";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -9,7 +9,8 @@ import styles from "./CoinPage.module.scss";
 import Coin from "./components/Coin/Coin";
 
 const CoinPage = () => {
-  const [coin, setCoin] = useState<Stocks | null>(null);
+  const [coin, setCoin] = useState<CoinTypes | null>(null);
+  const [error, setError] = React.useState<string | null>(null);
 
   const { coinID } = useParams();
 
@@ -25,19 +26,17 @@ const CoinPage = () => {
       };
       fetch();
     } catch {
-      alert("Error");
+      setError("Не удалось получить данные");
     }
   }, [coinID]);
 
-  if (!coin) {
-    return <div>загрузка</div>;
+  if (error) {
+    return <div>{error}</div>;
   }
 
   return (
     <div className={styles.coin}>
-      <div>
-        <Coin coin={coin} />
-      </div>
+      <Coin coin={coin} />
     </div>
   );
 };

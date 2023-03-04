@@ -41,6 +41,7 @@
         }
     }
     .options {
+        position: absolute;
         width: 226px;
         height: auto;
         background: $white-color;
@@ -59,18 +60,6 @@
             padding: 5px 0 4px 8px;
 
             &:hover {
-                background-color: $small-btn-color;
-
-                &:first-child {
-                    border-radius: 12px 12px 0 0;
-                }
-
-                &:last-child {
-                    border-radius: 0 0 12px 12px;
-                }
-            }
-
-            &:has(> input:checked) {
                 background-color: $small-btn-color;
 
                 &:first-child {

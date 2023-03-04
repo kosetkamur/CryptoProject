@@ -7,6 +7,12 @@ export type Stocks = {
   value?: string;
   price_change_percentage_24h: number;
   price_change_24h?: number;
+};
+export type CoinTypes = {
+  id: string;
+  name: string;
+  image: { small: string };
+  symbol: string;
   description?: { en: string };
   market_data?: {
     market_cap?: { usd: number };
@@ -21,5 +27,5 @@ export type Stocks = {
 };
 
 export type CoinList = {
-  coin: Stocks | null;
+  coin: CoinTypes | null;
 };

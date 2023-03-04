@@ -16,12 +16,7 @@ const options: Option[] = [
   { key: "AED", value: "AED" },
 ];
 const MarketPage: FC = () => {
-  const [option, setOption] = useState<Option[]>([
-    { key: "USD", value: "USD" },
-  ]);
-
-  const defaultPluralizeOptions = (elements: Option[]) =>
-    elements.map((el: Option) => el.value).join();
+  const [option, setOption] = useState<Option>({ key: "USD", value: "USD" });
 
   return (
     <div className={styles.market}>
@@ -31,12 +26,7 @@ const MarketPage: FC = () => {
       </div>
       <div className={styles.market__multidropdown}>
         <h4>Coins</h4>
-        <MultiDropdown
-          options={options}
-          value={option}
-          onChange={setOption}
-          pluralizeOptions={defaultPluralizeOptions}
-        />
+        <MultiDropdown options={options} value={option} onChange={setOption} />
       </div>
       <CategoryCoin />
       <Line />
