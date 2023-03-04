@@ -16,6 +16,8 @@ export const useCoinContext = () => useContext(CoinContext);
 
 function App() {
   const [stocks, setStocks] = useState<Stocks[]>([]);
+  const [error, setError] = React.useState<string | null>(null);
+ 
 
   useEffect(() => {
     try {
@@ -28,9 +30,13 @@ function App() {
       };
       fetch();
     } catch {
-      alert("Error");
+      setError('Не удалось получить данные')
     }
   }, []);
+  
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <CoinContext.Provider value={stocks}>
