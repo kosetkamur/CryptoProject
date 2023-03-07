@@ -1,14 +1,14 @@
 import React, { FC } from "react";
 
-import { Stocks } from "@config/const";
 import { regexPrice } from "@config/regex";
+import { StockItemsModels } from "@store/models";
 import cn from "classnames";
 import { Link } from "react-router-dom";
 
 import styles from "./CoinCard.module.scss";
 
 type CoinCardList = {
-  stock: Stocks;
+  stock: StockItemsModels;
 };
 
 const CoinCard: FC<CoinCardList> = ({ stock }) => {
@@ -28,18 +28,17 @@ const CoinCard: FC<CoinCardList> = ({ stock }) => {
         </div>
         <div className={styles.card__price}>
           <h5 className={styles.card__price_title}>
-            $
-            {stock.current_price.toFixed(2).toString().replace(regexPrice, ",")}
+            ${stock.currentPrice.toFixed(2).toString().replace(regexPrice, ",")}
           </h5>
           <p
             className={cn(
               styles.card__price_percent,
-              stock.price_change_percentage_24h > 0
+              stock.priceChangePercentage24h > 0
                 ? styles.colorGreen
                 : styles.colorRed
             )}
           >
-            {stock.price_change_percentage_24h.toFixed(2)}%
+            {stock.priceChangePercentage24h.toFixed(2)}%
           </p>
         </div>
       </div>

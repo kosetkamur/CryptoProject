@@ -7,26 +7,26 @@ import styles from "./CoinTable.module.scss";
 import Line from "../../../../components/Line";
 
 const CoinTable: FC<CoinList> = ({ coin }) => {
-  let marketData = coin?.market_data;
+  let marketData = coin?.marketData;
   //react.useMemo в 4 домашке
   const tableValue = [
     {
       key: 0,
       title: "Market Cap",
-      value: `${marketData?.market_cap?.usd}`,
+      value: `${marketData?.marketCap?.usd}`,
     },
     {
       key: 1,
       title: "Fully Diluted Valuation",
-      value: `${marketData?.fully_diluted_valuation?.usd}`,
+      value: `${marketData?.fullyDilutedValuation?.usd}`,
     },
     {
       key: 2,
       title: "Circulating Supply",
-      value: marketData?.circulating_supply,
+      value: marketData?.circulatingSupply,
     },
-    { key: 3, title: "Total Supply", value: marketData?.total_supply },
-    { key: 4, title: "Max Supply", value: marketData?.max_supply },
+    { key: 3, title: "Total Supply", value: marketData?.totalSupply },
+    { key: 4, title: "Max Supply", value: marketData?.maxSupply },
   ];
   return (
     <div className={styles.table}>

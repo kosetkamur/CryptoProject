@@ -6,6 +6,7 @@ import { useCoinContext } from "../../../../App";
 
 const CoinCards: FC = () => {
   const coinContext = useCoinContext();
+
   return (
     <div className={styles.cards}>
       {coinContext.map((stock) => (
@@ -15,4 +16,4 @@ const CoinCards: FC = () => {
   );
 };
 
-export default CoinCards;
+export default React.memo(CoinCards);

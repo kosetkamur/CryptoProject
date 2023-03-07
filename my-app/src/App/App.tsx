@@ -1,8 +1,13 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext } from "react";
 
-import { Stocks } from "@config/const";
-import { url } from "@config/urls";
-import axios from "axios";
+import "../config/configureMobX";
+
+import { Meta } from "@store/meta";
+import { StockItemsModels } from "@store/models";
+import { useQueryParamsStoreInit } from "@store/RootStore/hooks/useQueryParamsStoreInit";
+import StocksStore from "@store/StocksStore/StocksStore";
+import { useLocalStore } from "@store/useLocalStore/useLocalStore";
+import { observer } from "mobx-react-lite";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import CoinPage from "./pages/CoinPage";
@@ -10,30 +15,26 @@ import MarketPage from "./pages/MarketPage";
 
 import "../styles/styles.scss";
 
-export const CoinContext = createContext<Stocks[]>([]);
+export const CoinContext = createContext<StockItemsModels[]>([]);
 
 export const useCoinContext = () => useContext(CoinContext);
 
 function App() {
-  const [stocks, setStocks] = useState<Stocks[]>([]);
+  // useQueryParamsStoreInit();
+  const stocksStore = useLocalStore(() => new StocksStore());
 
-  useEffect(() => {
-    try {
-      const fetch = async () => {
-        const result = await axios({
-          method: "get",
-          url: url,
-        });
-        setStocks(result.data);
-      };
-      fetch();
-    } catch {
-      alert("Error");
-    }
-  }, []);
+  React.useEffect(() => {
+    stocksStore.getStocksList({
+      area: "markets",
+    });
+  }, [stocksStore]);
+
+  if (stocksStore.meta === Meta.loading) {
+    return <div>Загрузка</div>;
+  }
 
   return (
-    <CoinContext.Provider value={stocks}>
+    <CoinContext.Provider value={stocksStore.list}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MarketPage />} />
@@ -44,4 +45,4 @@ function App() {
   );
 }
 
-export default App;
+export default observer(App);

@@ -1,0 +1,42 @@
+import {
+  CurrenciesApi,
+  CurrenciesModels,
+  normalizeCurrencies,
+} from "@store/models/Currencies";
+
+export type CoinMarketDataApi = {
+  market_cap: CurrenciesApi;
+  fully_diluted_valuation: CurrenciesApi;
+  circulating_supply: number;
+  total_supply: number;
+  max_supply: number;
+  current_price: CurrenciesApi;
+  price_change_24h: CurrenciesApi;
+  price_change_percentage_24h_in_currency: CurrenciesApi;
+};
+
+export type CoinMarketDataModels = {
+  marketCap: CurrenciesModels;
+  fullyDilutedValuation: CurrenciesModels;
+  circulatingSupply: number;
+  totalSupply: number;
+  maxSupply: number;
+  currentPrice: CurrenciesModels;
+  priceChange24h: CurrenciesModels;
+  priceChangePercentage24hInCurrency: CurrenciesModels;
+};
+
+export const normalizeCoinMarketData = (
+  from: CoinMarketDataApi
+): CoinMarketDataModels => ({
+  marketCap: normalizeCurrencies(from.market_cap),
+  fullyDilutedValuation: normalizeCurrencies(from.fully_diluted_valuation),
+  circulatingSupply: from.circulating_supply,
+  totalSupply: from.total_supply,
+  maxSupply: from.max_supply,
+  currentPrice: normalizeCurrencies(from.current_price),
+  priceChange24h: normalizeCurrencies(from.price_change_24h),
+  priceChangePercentage24hInCurrency: normalizeCurrencies(
+    from.price_change_percentage_24h_in_currency
+  ),
+});

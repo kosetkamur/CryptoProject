@@ -12,8 +12,8 @@ const CoinPrice: FC<CoinList> = ({ coin }) => {
         <div className={styles.price__current}>
           <h3>
             $
-            {coin?.market_data?.current_price.usd
-              ? coin?.market_data?.current_price.usd
+            {coin?.marketData?.currentPrice.usd
+              ? coin?.marketData?.currentPrice.usd
                   .toFixed(3)
                   .toString()
                   .replace(regexPrice, ",")
@@ -22,17 +22,17 @@ const CoinPrice: FC<CoinList> = ({ coin }) => {
         </div>
         <div className={styles.price__change}>
           <p>
-            {coin?.market_data?.price_change_24h.usd !== undefined &&
-            coin.market_data?.price_change_24h.usd > 0 ? (
+            {coin?.marketData?.priceChange24h.usd !== undefined &&
+            coin.marketData?.priceChange24h.usd > 0 ? (
               <span className={styles.colorGreen}>
-                +{coin?.market_data?.price_change_24h.usd}(
-                {coin?.market_data?.price_change_percentage_24h_in_currency.usd}
+                +{coin?.marketData?.priceChange24h.usd}(
+                {coin?.marketData?.priceChangePercentage24hInCurrency.usd}
                 %)
               </span>
             ) : (
               <span className={styles.colorRed}>
-                {coin?.market_data?.price_change_24h?.usd || ""}(
-                {coin?.market_data?.price_change_percentage_24h_in_currency.usd}
+                {coin?.marketData?.priceChange24h?.usd || ""}(
+                {coin?.marketData?.priceChangePercentage24hInCurrency.usd}
                 %)
               </span>
             )}

@@ -1,44 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import { CoinTypes } from "@config/const";
-import { urlCoin } from "@config/urls";
-import axios from "axios";
+import { Meta } from "@store/meta";
+import StocksStore from "@store/StocksStore/StocksStore";
+import { useLocalStore } from "@store/useLocalStore/useLocalStore";
+import { observer } from "mobx-react-lite";
 import { useParams } from "react-router-dom";
 
 import styles from "./CoinPage.module.scss";
 import Coin from "./components/Coin/Coin";
 
 const CoinPage = () => {
-  const [coin, setCoin] = useState<CoinTypes | null>(null);
-  const [error, setError] = React.useState<string | null>(null);
-
+  const stocksStore = useLocalStore(() => new StocksStore());
   const { coinID } = useParams();
 
-  useEffect(() => {
-    try {
-      const fetch = async () => {
-        let url: string = urlCoin + coinID;
-        const result = await axios({
-          method: "get",
-          url: url,
-        });
-        setCoin(result.data);
-      };
-      fetch();
-    } catch {
-      setError("Не удалось получить данные");
-    }
-  }, [coinID]);
+  React.useEffect(() => {
+    stocksStore.getCoin(coinID);
+  }, [stocksStore, coinID]);
 
-  if (error) {
-    return <div>{error}</div>;
+  if (stocksStore.meta === Meta.loading) {
+    return <div>Загрузка</div>;
   }
 
   return (
     <div className={styles.coin}>
-      <Coin coin={coin} />
+      <Coin coin={stocksStore.coin} />
     </div>
   );
 };
 
-export default CoinPage;
+export default observer(CoinPage);
