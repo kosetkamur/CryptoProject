@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 
-import { CoinList } from "@config/const";
+import { CoinProps } from "@config/types";
 
 import styles from "./CoinDescription.module.scss";
 
-const CoinDescription: FC<CoinList> = ({ coin }) => {
+const CoinDescription: FC<CoinProps> = ({ coin }) => {
   return (
     <div className={styles.description}>
       <h5>Description</h5>

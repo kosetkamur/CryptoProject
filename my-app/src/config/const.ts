@@ -1,5 +1,9 @@
-import { CoinModels } from "@store/models/Coin";
+import { Option } from "@config/types";
 
-export type CoinList = {
-  coin: CoinModels | null;
-};
+const options: Option[] = [
+  { key: "USD", value: "USD" },
+  { key: "RUB", value: "RUB" },
+  { key: "EUR", value: "EUR" },
+  { key: "AED", value: "AED" },
+];
+export default options;

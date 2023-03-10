@@ -1,6 +1,6 @@
 import {
   CoinMarketDataApi,
-  CoinMarketDataModels,
+  CoinMarketDataModel,
   normalizeCoinMarketData,
 } from "@store/models/CoinMarketData";
 
@@ -19,7 +19,7 @@ export type CoinModels = {
   image: { small: string };
   symbol: string;
   description: { en: string };
-  marketData: CoinMarketDataModels;
+  marketData: CoinMarketDataModel;
 };
 
 export const normalizeCoin = (from: CoinApi): CoinModels => ({

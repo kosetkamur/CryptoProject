@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
-import { regexPrice } from "@config/regex";
 import { StockItemsModels } from "@store/models";
+import { getFormattedPrice } from "@utils/getFormattedPrice";
 import cn from "classnames";
 import { Link } from "react-router-dom";
 
@@ -28,7 +28,7 @@ const CoinCard: FC<CoinCardList> = ({ stock }) => {
         </div>
         <div className={styles.card__price}>
           <h5 className={styles.card__price_title}>
-            ${stock.currentPrice.toFixed(2).toString().replace(regexPrice, ",")}
+            ${getFormattedPrice(stock.currentPrice)}
           </h5>
           <p
             className={cn(

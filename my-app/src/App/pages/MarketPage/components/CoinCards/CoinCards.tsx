@@ -1,19 +1,21 @@
 import React, { FC } from "react";
 
+import { useStocksStoreContext } from "@app/pages/MarketPage/MarketPage";
+import { StockItemsModels } from "@store/models";
+import { observer } from "mobx-react-lite";
+
 import CoinCard from "./CoinCard/CoinCard";
 import styles from "./CoinCards.module.scss";
-import { useCoinContext } from "../../../../App";
 
 const CoinCards: FC = () => {
-  const coinContext = useCoinContext();
-
+  const stockStore = useStocksStoreContext();
   return (
     <div className={styles.cards}>
-      {coinContext.map((stock) => (
+      {stockStore?.list.map((stock) => (
         <CoinCard stock={stock} key={stock.id} />
       ))}
     </div>
   );
 };
 
-export default React.memo(CoinCards);
+export default observer(CoinCards);

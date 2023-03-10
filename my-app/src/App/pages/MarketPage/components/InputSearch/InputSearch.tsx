@@ -1,23 +1,15 @@
-import React, { ChangeEvent, FC, useState } from "react";
-
-import { StockItemsModels } from "@store/models";
-import { observer } from "mobx-react-lite";
-import { useNavigate } from "react-router-dom";
+import React, { ChangeEvent, FC } from "react";
 
 import styles from "./InputSearch.module.scss";
-import { useCoinContext } from "../../../../App";
 
-type InputSearchTypes = {
+type InputSearchProps = {
   value: string;
-  onChange: (value: string) => void;
+  handleChange: (value: string) => void;
 };
 
-const InputSearch: FC<InputSearchTypes> = ({ onChange, value }) => {
-  const coinContext = useCoinContext();
-  const navigate = useNavigate();
+const InputSearch: FC<InputSearchProps> = ({ handleChange, value }) => {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    onChange(e.target.value);
-    // stocksStore.setQuery(value);
+    handleChange(e.target.value);
   };
   return (
     <input
@@ -29,5 +21,4 @@ const InputSearch: FC<InputSearchTypes> = ({ onChange, value }) => {
     />
   );
 };
-// export default observer(InputSearch);
 export default InputSearch;

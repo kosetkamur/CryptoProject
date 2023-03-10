@@ -1,13 +1,13 @@
 import React, { FC } from "react";
 
-import { CoinList } from "@config/const";
+import { CoinProps } from "@config/types";
 import arrowBack from "@img/arrow.svg";
 import star from "@img/star.svg";
 import { Link } from "react-router-dom";
 
 import styles from "./CoinHeader.module.scss";
 
-const CoinHeader: FC<CoinList> = ({ coin }) => {
+const CoinHeader: FC<CoinProps> = ({ coin }) => {
   return (
     <div className={styles.header}>
       <Link to="/" className={styles.header__arrowBack}>

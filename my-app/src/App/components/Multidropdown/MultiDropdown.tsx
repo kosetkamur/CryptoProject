@@ -1,17 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+
+import { MultiDropdownProps } from "@config/types";
 
 import styles from "./MultiDropdown.module.scss";
-
-export type Option = {
-  key: string;
-  value: string;
-};
-
-type MultiDropdownProps = {
-  options: Option[];
-  value: Option;
-  onChange: (value: Option) => void;
-};
 
 const MultiDropdown: React.FC<MultiDropdownProps> = ({
   value,

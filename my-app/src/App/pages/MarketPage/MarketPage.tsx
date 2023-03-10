@@ -1,43 +1,65 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { createContext, FC, useContext, useState } from "react";
 
-import { StockItemsModels } from "@store/models";
+import MultiDropdown from "@components/Multidropdown";
+import options from "@config/const";
+import { Option } from "@config/types";
+import { Meta } from "@store/meta";
+import { useQueryParamsStoreInit } from "@store/RootStore/hooks/useQueryParamsStoreInit";
+import StocksStore from "@store/StocksStore/StocksStore";
+import { useLocalStore } from "@store/useLocalStore/useLocalStore";
+import { observer } from "mobx-react-lite";
 
 import ButtonSearch from "./components/ButtonSerach";
 import CategoryCoin from "./components/CategoryCoin";
 import CoinCards from "./components/CoinCards";
 import InputSearch from "./components/InputSearch";
 import styles from "./MarketPage.module.scss";
-import { useCoinContext } from "../../App";
 import Line from "../../components/Line";
-import MultiDropdown from "../../components/Multidropdown";
-import { Option } from "../../components/Multidropdown/MultiDropdown";
 
-const options: Option[] = [
-  { key: "USD", value: "USD" },
-  { key: "RUB", value: "RUB" },
-  { key: "EUR", value: "EUR" },
-  { key: "AED", value: "AED" },
-];
+export const StocksStoreContext = createContext<StocksStore | null>(null);
+export const useStocksStoreContext = () => useContext(StocksStoreContext);
 
 const MarketPage: FC = () => {
+  useQueryParamsStoreInit();
+  const stocksStore = useLocalStore(() => new StocksStore());
+
   const [option, setOption] = useState<Option>({ key: "USD", value: "USD" });
-  const [value, setValue] = useState("");
+
+  React.useEffect(() => {
+    stocksStore.getStocksList({
+      area: "markets",
+    });
+  }, [stocksStore]);
+
+  const handleChange = (value: string) => {
+    stocksStore.setValue(value);
+  };
+
+  if (stocksStore.meta === Meta.loading) {
+    return <div>Загрузка</div>;
+  }
 
   return (
-    <div className={styles.market}>
-      <div className={styles.market__search}>
-        <InputSearch value={value} onChange={setValue} />
-        <ButtonSearch />
+    <StocksStoreContext.Provider value={stocksStore}>
+      <div className={styles.market}>
+        <div className={styles.market__search}>
+          <InputSearch value={stocksStore.value} handleChange={handleChange} />
+          <ButtonSearch />
+        </div>
+        <div className={styles.market__multidropdown}>
+          <h4>Coins</h4>
+          <MultiDropdown
+            options={options}
+            value={option}
+            onChange={setOption}
+          />
+        </div>
+        <CategoryCoin />
+        <Line />
+        <CoinCards />
       </div>
-      <div className={styles.market__multidropdown}>
-        <h4>Coins</h4>
-        <MultiDropdown options={options} value={option} onChange={setOption} />
-      </div>
-      <CategoryCoin />
-      <Line />
-      <CoinCards />
-    </div>
+    </StocksStoreContext.Provider>
   );
 };
 
-export default MarketPage;
+export default observer(MarketPage);

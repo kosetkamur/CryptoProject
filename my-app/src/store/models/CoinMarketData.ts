@@ -15,7 +15,7 @@ export type CoinMarketDataApi = {
   price_change_percentage_24h_in_currency: CurrenciesApi;
 };
 
-export type CoinMarketDataModels = {
+export type CoinMarketDataModel = {
   marketCap: CurrenciesModels;
   fullyDilutedValuation: CurrenciesModels;
   circulatingSupply: number;
@@ -28,7 +28,7 @@ export type CoinMarketDataModels = {
 
 export const normalizeCoinMarketData = (
   from: CoinMarketDataApi
-): CoinMarketDataModels => ({
+): CoinMarketDataModel => ({
   marketCap: normalizeCurrencies(from.market_cap),
   fullyDilutedValuation: normalizeCurrencies(from.fully_diluted_valuation),
   circulatingSupply: from.circulating_supply,

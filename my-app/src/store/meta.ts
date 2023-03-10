@@ -1,6 +1,18 @@
 export enum Meta {
-  initial = "initial", // Процесс не начат
-  loading = "loading", // В процессе загрузки
-  error = "error", // Завершилось с ошибкой
-  success = "success", // Завершилось успешно
+  /**
+   * Процесс не начат
+   */
+  initial = "initial",
+  /**
+   * В процессе загрузки
+   */
+  loading = "loading",
+  /**
+   * Завершилось с ошибкой
+   */
+  error = "error",
+  /**
+   * Завершилось успешно
+   */
+  success = "success",
 }
