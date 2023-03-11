@@ -8,8 +8,8 @@ import { useQueryParamsStoreInit } from "@store/RootStore/hooks/useQueryParamsSt
 import StocksStore from "@store/StocksStore/StocksStore";
 import { useLocalStore } from "@store/useLocalStore/useLocalStore";
 import { observer } from "mobx-react-lite";
+import { useSearchParams } from "react-router-dom";
 
-import ButtonSearch from "./components/ButtonSerach";
 import CategoryCoin from "./components/CategoryCoin";
 import CoinCards from "./components/CoinCards";
 import InputSearch from "./components/InputSearch";
@@ -22,17 +22,23 @@ export const useStocksStoreContext = () => useContext(StocksStoreContext);
 const MarketPage: FC = () => {
   useQueryParamsStoreInit();
   const stocksStore = useLocalStore(() => new StocksStore());
+  const [searchParams, setSarchParams] = useSearchParams();
 
+  const query = searchParams.get("vs_currency") || "";
   const [option, setOption] = useState<Option>({ key: "USD", value: "USD" });
 
   React.useEffect(() => {
-    stocksStore.getStocksList({
-      area: "markets",
-    });
+    stocksStore.getStocksList();
   }, [stocksStore]);
 
   const handleChange = (value: string) => {
     stocksStore.setValue(value);
+  };
+
+  const handleSubmit = () => {
+    const query = stocksStore.value.toLowerCase();
+    stocksStore.setSearchList(query);
+    setSarchParams({ vs_currency: query });
   };
 
   if (stocksStore.meta === Meta.loading) {
@@ -42,10 +48,11 @@ const MarketPage: FC = () => {
   return (
     <StocksStoreContext.Provider value={stocksStore}>
       <div className={styles.market}>
-        <div className={styles.market__search}>
-          <InputSearch value={stocksStore.value} handleChange={handleChange} />
-          <ButtonSearch />
-        </div>
+        <InputSearch
+          value={stocksStore.value}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+        />
         <div className={styles.market__multidropdown}>
           <h4>Coins</h4>
           <MultiDropdown

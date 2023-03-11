@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 
+import { currencyIcon } from "@config/const";
 import { StockItemsModels } from "@store/models";
 import { getFormattedPrice } from "@utils/getFormattedPrice";
 import cn from "classnames";
@@ -9,9 +10,10 @@ import styles from "./CoinCard.module.scss";
 
 type CoinCardList = {
   stock: StockItemsModels;
+  currency: string;
 };
 
-const CoinCard: FC<CoinCardList> = ({ stock }) => {
+const CoinCard: FC<CoinCardList> = ({ stock, currency }) => {
   return (
     <Link to={`/${stock.id}`} className={styles.link}>
       <div className={styles.card} id={stock.id} key={stock.id}>
@@ -28,7 +30,8 @@ const CoinCard: FC<CoinCardList> = ({ stock }) => {
         </div>
         <div className={styles.card__price}>
           <h5 className={styles.card__price_title}>
-            ${getFormattedPrice(stock.currentPrice)}
+            {currency ? currencyIcon[currency.toLowerCase()] : "$"}
+            {getFormattedPrice(stock.currentPrice)}
           </h5>
           <p
             className={cn(

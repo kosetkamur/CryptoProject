@@ -28,7 +28,6 @@ export default class QueryParamsStore {
       //проверка не равна ли текущая строка новой
       this._search = search;
       this._params = qs.parse(search); //присваеваем результат распарсенной квери строки
-      console.log(this._params);
     }
   }
 }

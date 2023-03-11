@@ -8,7 +8,6 @@ import {
   normalizeCollection,
 } from "@store/models/shared/collection";
 import rootStore from "@store/RootStore";
-import { queryFunction } from "@store/StocksStore/queryFunction.ts/queryFunction";
 import {
   action,
   computed,
@@ -17,7 +16,6 @@ import {
   observable,
   reaction,
   runInAction,
-  toJS,
 } from "mobx";
 
 import { Meta } from "../meta";
@@ -28,9 +26,9 @@ import {
 } from "../models";
 import { ILocalStore } from "../useLocalStore/useLocalStore";
 
-const BASE_URL = "https://api.coingecko.com/api/v3/coins";
+const BASE_URL = "https://api.coingecko.com/api/v3/coins/";
 
-type PrivateFields = "_list" | "_meta" | "_coin" | "_value";
+type PrivateFields = "_list" | "_meta" | "_coin" | "_value" | "_num";
 
 export default class StocksStore implements IStocksStore, ILocalStore {
   private readonly _apiStore = new ApiStore(BASE_URL);
@@ -39,6 +37,8 @@ export default class StocksStore implements IStocksStore, ILocalStore {
   private _coin: CoinModels | null = null;
   private _meta: Meta = Meta.initial;
   private _value: string = "";
+  hasMore: boolean = true;
+  private _num: number = 0;
 
   constructor() {
     makeObservable<StocksStore, PrivateFields>(this, {
@@ -46,6 +46,8 @@ export default class StocksStore implements IStocksStore, ILocalStore {
       _list: observable.ref,
       _meta: observable,
       _value: observable,
+      _num: observable,
+      hasMore: observable,
 
       list: computed,
       meta: computed,
@@ -55,6 +57,8 @@ export default class StocksStore implements IStocksStore, ILocalStore {
       getStocksList: action,
       getCoin: action,
       setValue: action,
+      setHasMore: action,
+      fetchMoreData: action.bound,
     });
   }
 
@@ -80,17 +84,43 @@ export default class StocksStore implements IStocksStore, ILocalStore {
     rootStore.query.setSearch(str);
   }
 
-  async getStocksList(params: getStocksListParams): Promise<void> {
+  setHasMore(): void {
+    this.hasMore = false;
+  }
+
+  fetchMoreData(): void {
+    this._num += 20;
+    this.getStocksList();
+  }
+
+  async getStocksList(): Promise<void> {
     this._meta = Meta.loading;
     this._list = getInitialCollectionModel();
-    // let query: string = "usd";
-    // if (this._value) {
-    //   query = this._value;
-    // }
 
     const response = await this._apiStore.request<StockItemsApi[] | null>({
-      // endpoint: `markets?vs_currency=${query}`,
       endpoint: `markets?vs_currency=usd`,
+    });
+
+    runInAction(() => {
+      if (!response.success) {
+        this._meta = Meta.error;
+      }
+      try {
+        const list = response.data.map(normalizeStockItems);
+        this._meta = Meta.success;
+        this._list = normalizeCollection(list, (listItem) => listItem.id);
+        return;
+      } catch {
+        this._meta = Meta.error;
+        this._list = getInitialCollectionModel();
+      }
+    });
+  }
+  async setSearchList(currency: string): Promise<void> {
+    this._meta = Meta.loading;
+
+    const response = await this._apiStore.request<StockItemsApi[] | null>({
+      endpoint: `markets?vs_currency=${currency}`,
     });
 
     runInAction(() => {
@@ -139,12 +169,5 @@ export default class StocksStore implements IStocksStore, ILocalStore {
     });
   }
 
-  destroy(): void {
-    this._qpReaction();
-  }
-
-  private readonly _qpReaction: IReactionDisposer = reaction(
-    () => rootStore.query.getParam("vs_currency"),
-    (search) => search //загрузить список монет, который должны выводиться при vs_currency
-  );
+  destroy(): void {}
 }

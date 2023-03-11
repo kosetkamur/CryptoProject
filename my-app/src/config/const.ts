@@ -7,3 +7,17 @@ const options: Option[] = [
   { key: "AED", value: "AED" },
 ];
 export default options;
+
+export const currencyIcon: any = {
+  usd: "$",
+  eur: "€",
+  jpy: "¥",
+  rub: "₽",
+};
+
+type currencyIconList = {
+  usd: string;
+  eur: string;
+  jpy: string;
+  rub: string;
+};
