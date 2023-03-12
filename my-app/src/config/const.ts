@@ -9,7 +9,7 @@ const options: Option[] = [
 export default options;
 
 type currencyIconTypes = {
-  [key: string]: string;
+  [key: string]: string,
 };
 
 export const currencyIcon: currencyIconTypes = {
