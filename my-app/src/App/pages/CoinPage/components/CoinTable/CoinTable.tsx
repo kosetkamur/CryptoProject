@@ -1,8 +1,8 @@
 import React, { FC, useMemo } from "react";
 
-import Line from "@components/Line";
-import { CoinProps, TableRow } from "@config/types";
-import { getFormattedPrice } from "@utils/getFormattedPrice";
+import Line from "components/Line";
+import { CoinProps, TableRow } from "config/types";
+import { getFormattedPrice } from "utils/getFormattedPrice";
 
 import styles from "./CoinTable.module.scss";
 

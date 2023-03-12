@@ -1,13 +1,5 @@
-import { currencyIcon } from "@config/const";
-import { IStocksStore } from "@config/types";
-import ApiStore from "@store/ApiStore/ApiStore";
-import { CoinApi, CoinModels, normalizeCoin } from "@store/models/Coin";
-import {
-  CollectionModel,
-  getInitialCollectionModel,
-  linearizeCollection,
-  normalizeCollection,
-} from "@store/models/shared/collection";
+import { currencyIcon } from "config/const";
+import { IStocksStore } from "config/types";
 import {
   action,
   computed,
@@ -15,6 +7,14 @@ import {
   observable,
   runInAction,
 } from "mobx";
+import ApiStore from "store/ApiStore/ApiStore";
+import { CoinApi, CoinModels, normalizeCoin } from "store/models/Coin";
+import {
+  CollectionModel,
+  getInitialCollectionModel,
+  linearizeCollection,
+  normalizeCollection,
+} from "store/models/shared/collection";
 
 import { Meta } from "../meta";
 import {

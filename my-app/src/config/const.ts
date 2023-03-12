@@ -1,4 +1,4 @@
-import { Option } from "@config/types";
+import { Option } from "config/types";
 
 const options: Option[] = [
   { key: "USD", value: "USD" },
@@ -8,16 +8,13 @@ const options: Option[] = [
 ];
 export default options;
 
-export const currencyIcon: any = {
+type currencyIconTypes = {
+  [key: string]: string;
+};
+
+export const currencyIcon: currencyIconTypes = {
   usd: "$",
   eur: "€",
   jpy: "¥",
   rub: "₽",
-};
-
-type currencyIconList = {
-  usd: string;
-  eur: string;
-  jpy: string;
-  rub: string;
 };

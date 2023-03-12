@@ -1,4 +1,5 @@
 import React from "react";
+import "regenerator-runtime";
 
 import ReactDOM from "react-dom/client";
 
@@ -12,3 +13,7 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// if(module.hot){
+//     module.hot.accept()
+// }

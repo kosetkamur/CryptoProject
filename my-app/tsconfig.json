@@ -1,7 +1,6 @@
 {
   "extends": "./tsconfig.paths.json",
   "compilerOptions": {
-    "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
@@ -14,17 +13,22 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "module": "es6",
+    "target": "es6",
+    "jsx": "react",
   },
-  "include": [
-    "src",
-    "./declaration.d.ts",
-    "scss",
-    "sass"
-  ]
+  "include": ["src/**/*", "./declaration.d.ts"], // какие файлы включены в проверку
+  "exclude": ["node_modules"] // какие файлы исключены
+//  "include": [
+//    "src",
+//    "./declaration.d.ts",
+//    "scss",
+//    "sass"
+//  ]
 }

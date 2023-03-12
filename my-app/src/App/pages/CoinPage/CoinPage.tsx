@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Meta } from "@store/meta";
-import StocksStore from "@store/StocksStore/StocksStore";
-import { useLocalStore } from "@store/useLocalStore/useLocalStore";
 import { observer } from "mobx-react-lite";
 import { useParams } from "react-router-dom";
+import { Meta } from "store/meta";
+import StocksStore from "store/StocksStore/StocksStore";
+import { useLocalStore } from "store/useLocalStore/useLocalStore";
 
 import styles from "./CoinPage.module.scss";
 import Coin from "./components/Coin/Coin";

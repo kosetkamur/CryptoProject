@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 
-import { CoinProps } from "@config/types";
-import arrowBack from "@img/arrow.svg";
-import star from "@img/star.svg";
+import { CoinProps } from "config/types";
+import arrowBack from "img/arrow.svg";
+import star from "img/star.svg";
 import { Link } from "react-router-dom";
 
 import styles from "./CoinHeader.module.scss";

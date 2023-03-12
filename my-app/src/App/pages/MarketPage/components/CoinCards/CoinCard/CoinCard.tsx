@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 
-import { StockItemsModels } from "@store/models";
-import { getFormattedPrice } from "@utils/getFormattedPrice";
 import cn from "classnames";
 import { Link } from "react-router-dom";
+import { StockItemsModels } from "store/models";
+import { getFormattedPrice } from "utils/getFormattedPrice";
 
 import styles from "./CoinCard.module.scss";
 

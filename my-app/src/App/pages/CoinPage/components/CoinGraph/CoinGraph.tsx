@@ -1,6 +1,6 @@
 import React from "react";
 
-import graph from "@img/graph.png";
+import graph from "img/graph.png";
 
 import styles from "./CoinGraph.module.scss";
 

@@ -1,14 +1,14 @@
 import React, { createContext, FC, useContext, useState } from "react";
 
-import MultiDropdown from "@components/Multidropdown";
-import options from "@config/const";
-import { Option } from "@config/types";
-import { Meta } from "@store/meta";
-import { useQueryParamsStoreInit } from "@store/RootStore/hooks/useQueryParamsStoreInit";
-import StocksStore from "@store/StocksStore/StocksStore";
-import { useLocalStore } from "@store/useLocalStore/useLocalStore";
+import MultiDropdown from "components/Multidropdown";
+import options from "config/const";
+import { Option } from "config/types";
 import { observer } from "mobx-react-lite";
 import { useSearchParams } from "react-router-dom";
+import { Meta } from "store/meta";
+import { useQueryParamsStoreInit } from "store/RootStore/hooks/useQueryParamsStoreInit";
+import StocksStore from "store/StocksStore/StocksStore";
+import { useLocalStore } from "store/useLocalStore/useLocalStore";
 
 import CategoryCoin from "./components/CategoryCoin";
 import CoinCards from "./components/CoinCards";

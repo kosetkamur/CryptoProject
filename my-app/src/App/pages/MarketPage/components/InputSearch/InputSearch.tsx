@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FC } from "react";
 
-import search from "@img/search.svg";
+import search from "img/search.svg";
 
 import styles from "./InputSearch.module.scss";
 

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { CoinProps } from "@config/types";
+import { CoinProps } from "config/types";
 
 import CoinDescription from "../CoinDescription";
 import CoinGraph from "../CoinGraph";

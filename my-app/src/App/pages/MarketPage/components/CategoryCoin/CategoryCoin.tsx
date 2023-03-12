@@ -1,12 +1,8 @@
 import React from "react";
 
-import { observer } from "mobx-react-lite";
-
 import styles from "./CategoryCoin.module.scss";
 
 const CategoryCoin = () => {
-  // находиться в разработке, поэтому нет useState
-  // const [active, setActive] = useState();
   const categories = [
     { id: 1, content: "All" },
     { id: 2, content: "Gainer" },

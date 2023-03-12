@@ -1,13 +1,14 @@
-declare module "*.module.scss";
-declare module "*.png" {
-    const value: any;
-    export = value;
+declare module '*.svg' {
+    const content: string;
+    export default content;
 }
-declare module '*.sass' {
+
+declare module '*.scss'{
     const content: Record<string, string>;
     export default content;
 }
-declare module '*.svg' {
+
+declare module '*.png'{
     const content: string;
     export default content;
 }

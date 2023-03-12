@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { MultiDropdownProps } from "@config/types";
+import { MultiDropdownProps } from "config/types";
 
 import styles from "./MultiDropdown.module.scss";
 
