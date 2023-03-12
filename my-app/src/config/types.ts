@@ -1,5 +1,5 @@
-import { CoinModels } from "@store/models/Coin";
-import { ILocalStore } from "@store/useLocalStore/useLocalStore";
+import { CoinModels } from "store/models/Coin";
+import { ILocalStore } from "store/useLocalStore/useLocalStore";
 
 export type CoinProps = {
   coin: CoinModels | null;

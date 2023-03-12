@@ -2,7 +2,7 @@ import {
   CoinMarketDataApi,
   CoinMarketDataModel,
   normalizeCoinMarketData,
-} from "@store/models/CoinMarketData";
+} from "store/models/CoinMarketData";
 
 export type CoinApi = {
   id: string;

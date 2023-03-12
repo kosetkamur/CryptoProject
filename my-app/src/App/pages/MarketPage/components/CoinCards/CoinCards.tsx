@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { useStocksStoreContext } from "@app/pages/MarketPage/MarketPage";
+import { useStocksStoreContext } from "app/pages/MarketPage/MarketPage";
 import { observer } from "mobx-react-lite";
 import InfiniteScroll from "react-infinite-scroll-component";
 

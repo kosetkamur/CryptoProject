@@ -1,4 +1,4 @@
-import { Option } from "@config/types";
+import { Option } from "config/types";
 
 const options: Option[] = [
   { key: "USD", value: "USD" },
@@ -10,7 +10,7 @@ export default options;
 
 type currencyIconTypes = {
   [key: string]: string,
-}
+};
 
 export const currencyIcon: currencyIconTypes = {
   usd: "$",

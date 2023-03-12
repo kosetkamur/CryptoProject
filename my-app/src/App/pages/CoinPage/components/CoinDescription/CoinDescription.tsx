@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { CoinProps } from "@config/types";
+import { CoinProps } from "config/types";
 
 import styles from "./CoinDescription.module.scss";
 

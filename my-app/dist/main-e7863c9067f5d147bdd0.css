@@ -1,0 +1,414 @@
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/App/pages/CoinPage/CoinPage.module.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+.src-App-pages-CoinPage-CoinPage-module__coin {
+  position: relative;
+  width: 375px;
+  height: 100%;
+  background: #FFFFFF;
+  margin: 0 auto;
+  padding: 17px 0;
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/App/pages/CoinPage/components/CoinDescription/CoinDescription.module.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+.src-App-pages-CoinPage-components-CoinDescription-CoinDescription-module__description {
+  margin: 21px 17px 21px 17px;
+}
+.src-App-pages-CoinPage-components-CoinDescription-CoinDescription-module__description h5 {
+  color: #6C757D;
+  padding-bottom: 5px;
+}
+.src-App-pages-CoinPage-components-CoinDescription-CoinDescription-module__description p {
+  font-size: 14px;
+}
+.src-App-pages-CoinPage-components-CoinDescription-CoinDescription-module__description p a {
+  text-decoration: underline !important;
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/App/pages/CoinPage/components/CoinGraph/CoinGraph.module.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.src-App-pages-CoinPage-components-CoinGraph-CoinGraph-module__graph h5 {
+  color: #6C757D;
+  padding: 0 17px;
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/App/pages/CoinPage/components/CoinHeader/CoinHeader.module.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************/
+.src-App-pages-CoinPage-components-CoinHeader-CoinHeader-module__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 17px;
+}
+.src-App-pages-CoinPage-components-CoinHeader-CoinHeader-module__header__arrowBack {
+  width: 9px;
+  height: 14px;
+}
+.src-App-pages-CoinPage-components-CoinHeader-CoinHeader-module__header__image {
+  padding: 0 8px 0 10px;
+}
+.src-App-pages-CoinPage-components-CoinHeader-CoinHeader-module__header__image img {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+.src-App-pages-CoinPage-components-CoinHeader-CoinHeader-module__header__description {
+  display: flex;
+  flex-direction: row;
+}
+.src-App-pages-CoinPage-components-CoinHeader-CoinHeader-module__header__description_title {
+  font-family: "Circular Std", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  color: #212529;
+}
+.src-App-pages-CoinPage-components-CoinHeader-CoinHeader-module__header__description_subtitle {
+  padding: 6px 0 0 4px;
+  font-family: "Circular Std", sans-serif;
+  font-style: normal;
+  font-size: 10px;
+  color: #6C757D;
+}
+.src-App-pages-CoinPage-components-CoinHeader-CoinHeader-module__header__star {
+  padding-left: 12px;
+  width: 16px;
+  height: 14px;
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/App/pages/CoinPage/components/CoinPrice/CoinPrice.module.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.src-App-pages-CoinPage-components-CoinPrice-CoinPrice-module__price {
+  display: flex;
+  flex-direction: row;
+  padding: 16px 17px 13px 17px;
+}
+.src-App-pages-CoinPage-components-CoinPrice-CoinPrice-module__price__current h3 {
+  font-family: "Circular Std", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  color: #212529;
+  margin: 0;
+}
+.src-App-pages-CoinPage-components-CoinPrice-CoinPrice-module__price__change p {
+  font-family: "Circular Std", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  padding-top: 6px;
+  padding-left: 12px;
+}
+.src-App-pages-CoinPage-components-CoinPrice-CoinPrice-module__price__change p .src-App-pages-CoinPage-components-CoinPrice-CoinPrice-module__colorRed {
+  color: #BF2133;
+}
+.src-App-pages-CoinPage-components-CoinPrice-CoinPrice-module__price__change p .src-App-pages-CoinPage-components-CoinPrice-CoinPrice-module__colorGreen {
+  color: #21BF73;
+}
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/App/components/Line/Line.module.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+.src-App-components-Line-Line-module__line {
+  background-color: #DFE2E4;
+  height: 1px;
+  width: 100%;
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/App/pages/CoinPage/components/CoinTable/CoinTable.module.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.src-App-pages-CoinPage-components-CoinTable-CoinTable-module__table {
+  margin: 0 17px;
+}
+.src-App-pages-CoinPage-components-CoinTable-CoinTable-module__table__head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 11px 0;
+}
+.src-App-pages-CoinPage-components-CoinTable-CoinTable-module__table__head_title {
+  font-family: "Circular Std", sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #6C757D;
+}
+.src-App-pages-CoinPage-components-CoinTable-CoinTable-module__table__head_value {
+  font-family: "Circular Std", sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  color: #212529;
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/App/components/Multidropdown/MultiDropdown.module.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.src-App-components-Multidropdown-MultiDropdown-module__multiDropdown {
+  display: block;
+}
+.src-App-components-Multidropdown-MultiDropdown-module__multiDropdown__button {
+  width: 226px;
+  height: 24px;
+  background: #FFFFFF;
+  border: 0.5px solid #DFE2E4;
+  border-radius: 12px;
+  text-align: left;
+  font-family: "Circular Std", sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  color: #6C757D;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 8px;
+  margin-bottom: 6px;
+}
+.src-App-components-Multidropdown-MultiDropdown-module__multiDropdown__button:focus {
+  border: 0.5px solid #DFE2E4;
+  color: #343A40;
+}
+.src-App-components-Multidropdown-MultiDropdown-module__multiDropdown__button:disabled {
+  border: 0.5px solid #DFE2E4;
+  color: #6C757D;
+  background-color: #F8F9FA;
+}
+.src-App-components-Multidropdown-MultiDropdown-module__multiDropdown__button_arrow {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAECAYAAABCxiV9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABZSURBVHgBXYm5DYAwEAT3jBApJbgFSriCkJwgIgogc0hXlIBLIPYHd3LmjWZnaN2O5wMsuokLZkiRSaAPpXnAud3mcbpFz3LfnOJy+TMYjV6gglhDRWEN6n+bJiH1kXPxHgAAAABJRU5ErkJggg==);
+  background-size: 7px auto;
+  background-repeat: no-repeat;
+  width: 7px;
+  height: 4px;
+}
+.src-App-components-Multidropdown-MultiDropdown-module__multiDropdown .src-App-components-Multidropdown-MultiDropdown-module__options {
+  position: absolute;
+  width: 226px;
+  height: auto;
+  background: #FFFFFF;
+  border: 0.5px solid #DFE2E4;
+  border-radius: 12px;
+  font-family: "Circular Std", sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  color: #343A40;
+  display: flex;
+  flex-direction: column;
+}
+.src-App-components-Multidropdown-MultiDropdown-module__multiDropdown .src-App-components-Multidropdown-MultiDropdown-module__options label {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 0.5px solid #DFE2E4;
+  padding: 5px 0 4px 8px;
+}
+.src-App-components-Multidropdown-MultiDropdown-module__multiDropdown .src-App-components-Multidropdown-MultiDropdown-module__options label:hover {
+  background-color: #F8F9FA;
+}
+.src-App-components-Multidropdown-MultiDropdown-module__multiDropdown .src-App-components-Multidropdown-MultiDropdown-module__options label:hover:first-child {
+  border-radius: 12px 12px 0 0;
+}
+.src-App-components-Multidropdown-MultiDropdown-module__multiDropdown .src-App-components-Multidropdown-MultiDropdown-module__options label:hover:last-child {
+  border-radius: 0 0 12px 12px;
+}
+.src-App-components-Multidropdown-MultiDropdown-module__multiDropdown .src-App-components-Multidropdown-MultiDropdown-module__options label:last-child {
+  border-bottom: none;
+}
+.src-App-components-Multidropdown-MultiDropdown-module__multiDropdown .src-App-components-Multidropdown-MultiDropdown-module__options__item {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/App/pages/MarketPage/components/CategoryCoin/CategoryCoin.module.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
+.src-App-pages-MarketPage-components-CategoryCoin-CategoryCoin-module__category {
+  display: flex;
+  flex-direction: row;
+  padding: 0 17px;
+}
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/App/pages/MarketPage/components/CoinCards/CoinCard/CoinCard.module.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
+.src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card:hover {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card {
+  width: 343px;
+  height: 72px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 0 18px;
+}
+.src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__content {
+  display: flex;
+  flex-direction: row;
+}
+.src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__content .src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__image {
+  display: flex;
+  align-items: center;
+  padding: 0 12px 0 0;
+}
+.src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__content .src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__image img {
+  width: 40px;
+  height: 40px;
+}
+.src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__content .src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__content .src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__description_title {
+  font-family: "Circular Std", sans-serif;
+  font-size: 16px;
+  color: #212529;
+  margin: 0;
+}
+.src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__content .src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__description_subtitle {
+  font-family: "Circular Std", sans-serif;
+  font-size: 12px;
+  color: #6C757D;
+  margin: 0;
+}
+.src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 5px;
+}
+.src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__price .src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__colorGreen {
+  color: #21BF73;
+}
+.src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__price .src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__colorRed {
+  color: #BF2133;
+}
+.src-App-pages-MarketPage-components-CoinCards-CoinCard-CoinCard-module__card__price_percent {
+  font-family: "Circular Std", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/App/pages/MarketPage/components/CoinCards/CoinCards.module.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************/
+.src-App-pages-MarketPage-components-CoinCards-CoinCards-module__cards {
+  display: flex;
+  flex-direction: column;
+  margin: 16px 17px;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/App/pages/MarketPage/components/InputSearch/InputSearch.module.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+.src-App-pages-MarketPage-components-InputSearch-InputSearch-module__search {
+  display: flex;
+  flex-direction: row;
+}
+.src-App-pages-MarketPage-components-InputSearch-InputSearch-module__search__input {
+  width: 294px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid #DFE2E4;
+  border-radius: 4px;
+  font-family: "Circular Std", sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  color: #343A40;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-left: 16px;
+}
+.src-App-pages-MarketPage-components-InputSearch-InputSearch-module__search__input:focus {
+  color: #343A40;
+  border: 1px solid #6C757D;
+}
+.src-App-pages-MarketPage-components-InputSearch-InputSearch-module__search__button {
+  background-color: #DFE2E4;
+  border-radius: 6px;
+  font-family: "Circular Std", sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  color: #343A40;
+  line-height: 18px;
+  text-align: center;
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.src-App-pages-MarketPage-components-InputSearch-InputSearch-module__search__button:hover {
+  opacity: 0.5;
+}
+.src-App-pages-MarketPage-components-InputSearch-InputSearch-module__search__button__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/App/pages/MarketPage/MarketPage.module.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************/
+.src-App-pages-MarketPage-MarketPage-module__market {
+  position: relative;
+  width: 375px;
+  height: 100%;
+  background: #F8F9FA;
+  margin: 0 auto;
+  padding: 17px 0;
+}
+.src-App-pages-MarketPage-MarketPage-module__market__multidropdown {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 18px 17px 24px 17px;
+}
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/styles/styles.scss ***!
+  \***************************************************************************************************************************************************************************************/
+* {
+  text-decoration: none;
+  font-family: "Circular Std", sans-serif;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: #F5F5F5;
+}
+
+h4 {
+  font-size: 18px;
+  color: #000000;
+  margin: 0;
+  padding-top: 4px;
+}
+
+h5 {
+  font-size: 16px;
+  color: #000000;
+  margin: 0;
+  padding-top: 4px;
+}
+
+h6 {
+  font-size: 14px;
+  color: #6C757D;
+  margin: 0 32px 0 0;
+  padding-top: 4px;
+}
+
+h6.active {
+  color: #0063F5;
+  padding-bottom: 1px;
+  border-bottom: 3px solid #0063F5;
+}
+
+p {
+  margin: 0;
+}
