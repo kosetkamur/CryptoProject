@@ -8,16 +8,16 @@ const options: Option[] = [
 ];
 export default options;
 
-export const currencyIcon: any = {
+type currencyIconTypes = {
+  usd: string,
+  eur: string,
+  jpy: string,
+  rub: string,
+}
+
+export const currencyIcon: currencyIconTypes = {
   usd: "$",
   eur: "€",
   jpy: "¥",
   rub: "₽",
-};
-
-type currencyIconList = {
-  usd: string;
-  eur: string;
-  jpy: string;
-  rub: string;
 };
