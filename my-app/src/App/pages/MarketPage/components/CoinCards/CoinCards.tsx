@@ -18,7 +18,11 @@ const CoinCards: FC = () => {
         loader={<h4>Loading...</h4>}
       >
         {stockStore?.list.map((stock) => (
-          <CoinCard stock={stock} key={stock.id} currency={stockStore.value} />
+          <CoinCard
+            stock={stock}
+            key={stock.id}
+            currency={stockStore?.currency}
+          />
         ))}
       </InfiniteScroll>
     </div>

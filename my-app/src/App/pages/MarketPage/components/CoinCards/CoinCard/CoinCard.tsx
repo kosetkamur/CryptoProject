@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 
-import { currencyIcon } from "@config/const";
 import { StockItemsModels } from "@store/models";
 import { getFormattedPrice } from "@utils/getFormattedPrice";
 import cn from "classnames";
@@ -30,7 +29,7 @@ const CoinCard: FC<CoinCardList> = ({ stock, currency }) => {
         </div>
         <div className={styles.card__price}>
           <h5 className={styles.card__price_title}>
-            {currency ? currencyIcon[currency.toLowerCase()] : "$"}
+            {currency}
             {getFormattedPrice(stock.currentPrice)}
           </h5>
           <p

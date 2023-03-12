@@ -1,4 +1,5 @@
-import { getStocksListParams, IStocksStore } from "@config/types";
+import { currencyIcon } from "@config/const";
+import { IStocksStore } from "@config/types";
 import ApiStore from "@store/ApiStore/ApiStore";
 import { CoinApi, CoinModels, normalizeCoin } from "@store/models/Coin";
 import {
@@ -7,14 +8,11 @@ import {
   linearizeCollection,
   normalizeCollection,
 } from "@store/models/shared/collection";
-import rootStore from "@store/RootStore";
 import {
   action,
   computed,
-  IReactionDisposer,
   makeObservable,
   observable,
-  reaction,
   runInAction,
 } from "mobx";
 
@@ -28,7 +26,13 @@ import { ILocalStore } from "../useLocalStore/useLocalStore";
 
 const BASE_URL = "https://api.coingecko.com/api/v3/coins/";
 
-type PrivateFields = "_list" | "_meta" | "_coin" | "_value" | "_num";
+type PrivateFields =
+  | "_list"
+  | "_meta"
+  | "_coin"
+  | "_value"
+  | "_num"
+  | "_currency";
 
 export default class StocksStore implements IStocksStore, ILocalStore {
   private readonly _apiStore = new ApiStore(BASE_URL);
@@ -38,6 +42,7 @@ export default class StocksStore implements IStocksStore, ILocalStore {
   private _meta: Meta = Meta.initial;
   private _value: string = "";
   hasMore: boolean = true;
+  private _currency: string = "$";
   private _num: number = 0;
 
   constructor() {
@@ -47,17 +52,20 @@ export default class StocksStore implements IStocksStore, ILocalStore {
       _meta: observable,
       _value: observable,
       _num: observable,
+      _currency: observable,
       hasMore: observable,
 
       list: computed,
       meta: computed,
       coin: computed,
       value: computed,
+      currency: computed,
 
       getStocksList: action,
       getCoin: action,
       setValue: action,
       setHasMore: action,
+      setCurrency: action,
       fetchMoreData: action.bound,
     });
   }
@@ -78,10 +86,16 @@ export default class StocksStore implements IStocksStore, ILocalStore {
     return this._value;
   }
 
+  get currency(): string {
+    return this._currency;
+  }
+
   setValue(value: string) {
     this._value = value;
-    let str = `vs_currency=${value}`;
-    rootStore.query.setSearch(str);
+  }
+
+  setCurrency(query: string) {
+    this._currency = currencyIcon[query];
   }
 
   setHasMore(): void {

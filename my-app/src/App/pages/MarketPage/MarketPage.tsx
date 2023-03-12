@@ -38,6 +38,7 @@ const MarketPage: FC = () => {
   const handleSubmit = () => {
     const query = stocksStore.value.toLowerCase();
     stocksStore.setSearchList(query);
+    stocksStore.setCurrency(query.toLowerCase());
     setSarchParams({ vs_currency: query });
   };
 
